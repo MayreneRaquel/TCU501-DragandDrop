@@ -25,7 +25,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/white"
-                android:text="TCU-501" />
+                android:text="TCU-501"
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/textView2"
@@ -33,25 +34,32 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/textView"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="128dp"
+                android:layout_marginTop="30dp"
                 android:text="Our Environment"
                 android:textColor="@android:color/white"
                 android:textSize="40dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
+
+            <pl.droidsonroids.gif.GifImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/ambiente" />
 
             <Button
                 android:id="@+id/btn1"
-                android:layout_width="100dp"
-                android:layout_height="65dp"
+                android:layout_width="150dp"
+                android:layout_height="70dp"
                 android:layout_alignParentBottom="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginBottom="23dp"
-                android:layout_marginEnd="138dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="31dp"
                 android:backgroundTint="@color/colorAccent"
-                android:onClick="pantallitaReci"
                 android:text="Play"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button"
                 android:textColor="@android:color/white"
-                android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+                android:textSize="25dp"
+                android:textStyle="bold" />
         </RelativeLayout>
     </LinearLayout>
 

@@ -7,18 +7,25 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
+    private Button btnPlay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        btnPlay = (Button) findViewById(R.id.btn1);
+        btnPlay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openGameActivity();
+            }
+        });
     }
 
-    public void pantallitaReci(View v){
-        //Intent i = new Intent(this, ReciclajeActivity.class);
-        //startActivity(i);
+    public void openGameActivity() {
+        Intent i = new Intent(this, GameActivity.class);
+        startActivity(i);
     }
 
 }

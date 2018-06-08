@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/DragandDrop.iml" filepath="$PROJECT_DIR$/DragandDrop.iml" />
+      <module fileurl="file://C:\Users\b40371\StudioProjects\TCU501-DragandDrop\DragandDrop.iml" filepath="C:\Users\b40371\StudioProjects\TCU501-DragandDrop\DragandDrop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TCU501-DragandDrop.iml" filepath="$PROJECT_DIR$/TCU501-DragandDrop.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\b40371\StudioProjects\TCU501-DragandDrop\app\app.iml" filepath="C:\Users\b40371\StudioProjects\TCU501-DragandDrop\app\app.iml" />
     </modules>
   </component>
 </project>
