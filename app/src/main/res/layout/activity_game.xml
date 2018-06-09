@@ -16,16 +16,46 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/text"
+                android:layout_width="300dp"
+                android:layout_height="100dp"
                 android:layout_alignParentTop="true"
+                android:layout_alignStart="@+id/img1"
+                android:layout_marginTop="21dp"
+                android:background="@drawable/rectbackground"
+                android:gravity="center_horizontal"
+                android:text="\nPhrase"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img3"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@+id/text"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="11dp"
-                android:text="Drag and drop the correct image!"
-                android:textColor="@color/verde"
-                android:textSize="23dp"
-                android:textStyle="bold"/>
+                android:layout_marginTop="15dp"
+                app:srcCompat="@color/fucsia" />
+
+            <ImageView
+                android:id="@+id/img1"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="14dp"
+                android:layout_marginStart="33dp"
+                app:srcCompat="@color/colorPrimaryDark" />
+
+            <ImageView
+                android:id="@+id/img2"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/img1"
+                android:layout_marginEnd="20dp"
+                app:srcCompat="@color/verde" />
         </RelativeLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
