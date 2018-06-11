@@ -21,29 +21,29 @@ public class GameActivity extends AppCompatActivity {
     int respuestaCorrecta = -1;
 
     public int[] imglist = {
-        R.drawable.airpollute,
-        R.drawable.chemicalswaste,
-        R.drawable.deforestation,
-        R.drawable.electronictrash,
-        R.drawable.forestfire,
-        R.drawable.huntinganimals,
-        R.drawable.plasticpollute,
-        R.drawable.trashriver,
-        R.drawable.wastingwater,
-        R.drawable.waterpollute
+            R.drawable.airpollute,
+            R.drawable.chemicalswaste,
+            R.drawable.deforestation,
+            R.drawable.electronictrash,
+            R.drawable.forestfire,
+            R.drawable.huntinganimals,
+            R.drawable.plasticpollute,
+            R.drawable.trashriver,
+            R.drawable.wastingwater,
+            R.drawable.waterpollute
     };
 
     public int[] noimglist = {
-        R.drawable.huntinganimals,
-        R.drawable.plasticpollute,
-        R.drawable.trashriver,
-        R.drawable.wastingwater,
-        R.drawable.waterpollute,
-        R.drawable.electronictrash,
-        R.drawable.forestfire,
-        R.drawable.airpollute,
-        R.drawable.chemicalswaste,
-        R.drawable.deforestation,
+            R.drawable.huntinganimals,
+            R.drawable.plasticpollute,
+            R.drawable.trashriver,
+            R.drawable.wastingwater,
+            R.drawable.waterpollute,
+            R.drawable.electronictrash,
+            R.drawable.forestfire,
+            R.drawable.airpollute,
+            R.drawable.chemicalswaste,
+            R.drawable.deforestation,
     };
 
     public String[] fraseslist = {
