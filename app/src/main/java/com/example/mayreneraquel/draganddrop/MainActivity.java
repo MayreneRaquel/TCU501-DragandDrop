@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         btn2 = (Button) findViewById(R.id.btn2);
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 openGameActivity2();
             }
         });
