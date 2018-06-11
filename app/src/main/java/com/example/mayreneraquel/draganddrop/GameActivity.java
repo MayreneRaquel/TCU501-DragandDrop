@@ -19,6 +19,8 @@ public class GameActivity extends AppCompatActivity {
     TextView text1;
     Button btnreview;
     int respuestaCorrecta = -1;
+    public boolean[] imagenUsada = {false, false, false, false, false, false, false, false, false, false};
+    int todasUsadas = 0;
 
     public int[] imglist = {
             R.drawable.airpollute,
@@ -101,7 +103,15 @@ public class GameActivity extends AppCompatActivity {
         //Imagenes al azar
         Random random = new Random();
         int aux = random.nextInt(imglist.length);
+        if (imagenUsada[aux] == true) {
+            boolean r = false;
+            int x = 0;
+            while ( x < imagenUsada.length && r == false) {
+
+            }
+        }
         int aux2 = random.nextInt(1);
+
         int imgSelec1 = imglist[aux];
         int imgSelec2 = noimglist[aux];
         if (aux2 == 0) {
@@ -121,6 +131,9 @@ public class GameActivity extends AppCompatActivity {
         //frase
         String frase = "\n" + fraseslist[aux];
         text1.setText(frase);
+
+        imagenUsada[aux] = true;
+        todasUsadas++;
     }
 
     View.OnLongClickListener longClickListener = new View.OnLongClickListener() {
