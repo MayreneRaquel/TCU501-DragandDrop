@@ -3,8 +3,8 @@ package com.example.mayreneraquel.draganddrop;
 import android.app.AlertDialog;
 import android.content.ClipData;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.DragEvent;
@@ -13,18 +13,17 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.security.SecureRandom;
 import java.util.Random;
+import java.util.HashSet;
 
 public class GameActivity extends AppCompatActivity {
     ImageView img1, img2, img3;
     TextView text1;
     Button btnreview;
-    int respuestaCorrecta = -1;
-    int respuestaUsuario = -1;
-    public boolean[] imagenUsada = {false, false, false, false, false, false, false, false, false, false};
-    int todasUsadas = 0;
+    int respuestaCorrecta;
+    int respuestaUsuario;
+    int todasUsadas;
+    public HashSet<Integer> randomUsadas;
 
     public int[] imglist = {
             R.drawable.airpollute,
@@ -49,7 +48,7 @@ public class GameActivity extends AppCompatActivity {
             R.drawable.plasticpollute2,
             R.drawable.trashriver2,
             R.drawable.wastingwater2,
-            R.drawable.waterpollute2,
+            R.drawable.waterpollute2
     };
 
     public String[] fraseslist = {
@@ -75,6 +74,10 @@ public class GameActivity extends AppCompatActivity {
         img3 = (ImageView) findViewById(R.id.img3);
         text1 = (TextView) findViewById(R.id.text);
         btnreview = (Button) findViewById(R.id.btnreview);
+        todasUsadas = 0;
+        randomUsadas = new HashSet<Integer>();
+        respuestaCorrecta = -1;
+        respuestaUsuario = -1;
 
         img1.setOnLongClickListener(longClickListener);
         img2.setOnLongClickListener(longClickListener);
@@ -92,7 +95,6 @@ public class GameActivity extends AppCompatActivity {
 
     public void revisar() {
         respuestaUsuario = (int) img3.getTag();
-        // Controla que no haga review sin haber elegido una imagen
         if (img3.getTag() != img1.getTag() && img3.getTag() != img2.getTag()) {
             Toast.makeText(getApplicationContext(), "Please select an image!", Toast.LENGTH_SHORT).show();
         }
@@ -101,8 +103,8 @@ public class GameActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Good job! You got the answer right!", Toast.LENGTH_SHORT).show();
                 preparar();
                 img3.setImageResource(R.color.fucsia);
-
-            } else {
+            }
+            else {
                 Toast.makeText(getApplicationContext(), "Try again!", Toast.LENGTH_SHORT).show();
                 img3.setImageResource(R.color.fucsia);
             }
@@ -111,9 +113,18 @@ public class GameActivity extends AppCompatActivity {
 
     public void preparar() {
         Random random = new Random();
-        if (todasUsadas < 10) {
+
+        if (todasUsadas < imglist.length-1) {
             int aux = random.nextInt(imglist.length);
-            int aux2 = random.nextInt(1);
+            int aux2 = random.nextInt(2);
+
+            if (randomUsadas.contains(aux)) { //Para que las imagenes no se repitan
+                while (randomUsadas.contains(aux)) {
+                    aux = random.nextInt(imglist.length);
+                }
+            }
+            randomUsadas.add(aux);
+            todasUsadas++;
 
             int imgSelec1 = imglist[aux];
             int imgSelec2 = noimglist[aux];
@@ -131,35 +142,40 @@ public class GameActivity extends AppCompatActivity {
                 img2.setTag(imgSelec1);
                 respuestaCorrecta = (int) img2.getTag();
             }
-            //frase
             String frase = "\n" + fraseslist[aux];
             text1.setText(frase);
-
-            //imagenUsada[aux] = true;
-            todasUsadas++;
         }
         else {
-            Toast.makeText(getApplicationContext(), "Congratulations!", Toast.LENGTH_SHORT).show();
             img1.setImageResource(R.color.verde);
             img2.setImageResource(R.color.verde);
             img3.setImageResource(R.color.fucsia);
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("All right, you guessed all the phrases!")
+                    .setTitle("CONGRATULATIONS!")
+                    .setCancelable(false);
+            builder.setPositiveButton("Try Again",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int i) {
+                            todasUsadas = 0;
+                            randomUsadas.clear();
+                            respuestaCorrecta = -1;
+                            respuestaUsuario = -1;
+                            preparar();
+                        }
+                    });
+            builder.setNegativeButton("Return to main menu",
+                    new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int i) {
+                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                    });
+            builder.show();
         }
     }
-
-    /*public void mensaje(View v){
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("All right, you guessed all the phrases!")
-                .setTitle("CONGRATULATIONS!")
-                .setCancelable(false)
-                .setNeutralButton("Aceptar",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                dialog.cancel();
-                            }
-                        });
-        AlertDialog alert = builder.create();
-        alert.show();
-    }*/
 
     View.OnLongClickListener longClickListener = new View.OnLongClickListener() {
         @Override
