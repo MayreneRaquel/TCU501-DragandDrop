@@ -60,7 +60,7 @@ public class GameActivity2 extends AppCompatActivity {
             "Save electric energy",
             "Use clean power",
             "Avoid buying plastic bags",
-            "Clasify garbage",
+            "Classify garbage",
             "Do not throw the garbage in the street"
     };
 

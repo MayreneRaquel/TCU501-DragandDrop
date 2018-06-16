@@ -10,51 +10,67 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/text"
-            android:layout_width="300dp"
-            android:layout_height="100dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="22dp"
-            android:background="@drawable/rectbackground"
-            android:gravity="center_horizontal"
-            android:text="\nPhrase"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/img1"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_above="@+id/btnreview"
-            android:layout_alignStart="@+id/text"
-            android:layout_marginBottom="12dp"
-            android:layout_marginStart="16dp"
-            app:srcCompat="@color/verde" />
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="22dp"
+                android:background="@drawable/rectbackground"
+                android:gravity="center_horizontal"
+                android:text="\nPhrase"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
-        <ImageView
-            android:id="@+id/img2"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_alignEnd="@+id/text"
-            android:layout_alignTop="@+id/img1"
-            android:layout_marginEnd="18dp"
-            app:srcCompat="@color/verde" />
+            <ImageView
+                android:id="@+id/img3"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_below="@+id/text"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="30dp"
 
-        <ImageView
-            android:id="@+id/img3"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_below="@+id/text"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="13dp"
-            app:srcCompat="@color/fucsia" />
+                app:srcCompat="@color/fucsia" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/img2"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_alignEnd="@+id/text"
+                    android:layout_alignTop="@+id/img1"
+                    android:layout_marginEnd="18dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@color/verde" />
+
+                <ImageView
+                    android:id="@+id/img1"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_above="@+id/btnreview"
+                    android:layout_alignStart="@+id/text"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@color/verde" />
+            </LinearLayout>
+        </LinearLayout>
 
         <Button
             android:id="@+id/btnreview"
-            android:layout_width="150dp"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_alignParentBottom="true"
             android:layout_alignStart="@+id/img3"
