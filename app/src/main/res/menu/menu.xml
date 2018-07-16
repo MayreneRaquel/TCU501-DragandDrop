@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/menu_Ins"
+        android:title="@string/tituloIns"
+        android:icon="@android:drawable/star_big_on"/>
+
+</menu>

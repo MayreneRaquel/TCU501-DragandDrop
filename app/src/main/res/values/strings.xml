@@ -1,3 +1,51 @@
 <resources>
     <string name="app_name">Drag and Drop </string>
+    <string name="tituloIns"><font fgcolor='#FFe6004c'>Instructions </font></string>
+    <string name="instrucciones">
+
+        Instrucciones:
+
+        \n
+        \n
+
+        Este es un juego de software acerca del tema “Our environment” para quinto grado de
+        primaria, las instrucciones son las siguientes.
+        \n➢ En la pantalla de inicio se encuentra el botón de “play” para iniciar, también se
+        encuentra un botón para salir de la aplicación.
+        \n➢ La aplicación consta de 5 pantallas donde se toma en cuenta acciones que favorececn
+        al planeta y 5 acciones para perjudicarlo.
+        \n➢ Al dar “play” al juego, aparecerá una pantalla la cual tendrá escrito en la parte de
+        arriba una acción ya sea para ayudar al planeta o para perjudicarlo, en la parte de
+        abajo estarán 2 o 3 imágenes de las cuales sólo una es asociativa con la frase escrita
+        arriba y en el medio vendrá un campo para que el jugador pueda arrastrar la imagen
+        que considere que es la correcta.
+        \n➢ Si acierta aparecerá un mensaje de felicitación y si no, aparecerá un mensaje de
+        intento fallido.
+        \n➢ Conforme se avance en el juego, el nivel de dificultad va a subir.
+
+        \n
+        \n
+
+        Instructions:
+
+        \n
+        \n
+
+        This is a software game about the theme "Our environment" for fifth grade of primary, the
+        instructions are as follows.
+        \n➢ On the home screen you will find the "play" button to start, there is also a button to exit
+        the application.
+        \n➢ The application consists of 5 screens that take into account actions that favor the
+        planet and 5 actions to harm it.
+        \n➢ When you tap on the play button, a screen will appear which will have written in the top
+        part an action either to help the planet or to harm it, in the part below there will be 2 or
+        3 images of which only one is associative with the phrase written above and in the
+        middle will come a field so that the player can drag the image that he considers to be
+        the correct one.
+        \n➢ If successful a congratulation message will appear and if not, a message of failed
+        attempt will appear.
+        \n➢ As the game progresses, the difficulty level will go up.
+
+
+    </string>
 </resources>

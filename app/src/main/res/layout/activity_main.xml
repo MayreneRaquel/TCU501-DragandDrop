@@ -24,9 +24,11 @@
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@android:color/white"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
                 android:text="TCU-501"
-                android:textStyle="bold"/>
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -72,6 +74,16 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Button"
                 android:textColor="@android:color/white"
                 android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textViewNombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:text="Prepared by: Mayrene Anchía Quesada"
+                android:textColor="@android:color/white"
                 android:textStyle="bold" />
         </RelativeLayout>
     </LinearLayout>
