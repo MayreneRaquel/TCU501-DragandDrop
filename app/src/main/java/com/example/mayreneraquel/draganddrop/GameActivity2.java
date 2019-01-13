@@ -13,8 +13,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.os.Build;
 import java.util.Random;
 import java.util.HashSet;
+import android.speech.tts.TextToSpeech;
+import java.util.Locale;
 
 public class GameActivity2 extends AppCompatActivity {
     ImageView img1, img2, img3;
@@ -64,6 +67,9 @@ public class GameActivity2 extends AppCompatActivity {
             "Do not throw the garbage in the street"
     };
 
+    TextToSpeech speech;
+    String respuestaspeech;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,6 +97,26 @@ public class GameActivity2 extends AppCompatActivity {
                 revisar();
             }
         });
+
+        speech = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if(status != TextToSpeech.ERROR) {
+                    speech.setLanguage(Locale.US);
+                }
+            }
+        });
+    }
+
+    public void hablar(View v) {
+        if(!speech.isSpeaking()) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                speech.speak(respuestaspeech, TextToSpeech.QUEUE_FLUSH, null, null);
+            }
+            else {
+                speech.speak(respuestaspeech, TextToSpeech.QUEUE_FLUSH, null);
+            }
+        }
     }
 
     public void revisar() {
@@ -144,6 +170,8 @@ public class GameActivity2 extends AppCompatActivity {
             }
             String frase = "\n" + fraseslist[aux];
             text1.setText(frase);
+
+            respuestaspeech = fraseslist[aux];
         }
         else {
             img1.setImageResource(R.color.verde);

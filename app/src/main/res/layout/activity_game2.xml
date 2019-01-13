@@ -21,7 +21,10 @@
                 android:layout_height="100dp"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="22dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/rectbackground"
                 android:gravity="center_horizontal"
                 android:text="\nPhrase"
@@ -29,16 +32,30 @@
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
+            <Button
+                android:id="@+id/btnspeech"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="0dp"
+                android:background="@color/colorPrimaryDark"
+                android:onClick="hablar"
+                android:text="speak"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
             <ImageView
                 android:id="@+id/img3"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:layout_below="@+id/text"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="30dp"
-
-                app:srcCompat="@color/fucsia" />
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="20dp"
+                app:srcCompat="@color/fucsia"
+                android:scaleType="centerInside"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -48,36 +65,43 @@
                 <ImageView
                     android:id="@+id/img2"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_alignEnd="@+id/text"
-                    android:layout_alignTop="@+id/img1"
-                    android:layout_marginEnd="18dp"
+                    android:layout_height="90dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
                     android:layout_weight="1"
-                    app:srcCompat="@color/verde" />
+                    app:srcCompat="@color/verde"
+                    android:scaleType="centerInside" />
 
                 <ImageView
                     android:id="@+id/img1"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_above="@+id/btnreview"
-                    android:layout_alignStart="@+id/text"
-                    android:layout_marginBottom="12dp"
-                    android:layout_marginStart="16dp"
+                    android:layout_height="90dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
                     android:layout_weight="1"
-                    app:srcCompat="@color/verde" />
+                    app:srcCompat="@color/verde"
+                    android:scaleType="centerInside"/>
             </LinearLayout>
         </LinearLayout>
 
         <Button
             android:id="@+id/btnreview"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
             android:layout_alignParentBottom="true"
-            android:layout_alignStart="@+id/img3"
-            android:layout_marginBottom="15dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
             android:background="@color/colorPrimaryDark"
             android:text="Review"
             android:textColor="@android:color/white"
             android:textStyle="bold" />
     </RelativeLayout>
+
 </android.support.constraint.ConstraintLayout>
